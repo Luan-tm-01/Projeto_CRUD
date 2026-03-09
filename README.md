@@ -1,24 +1,24 @@
-# 🏥 Sistema de Cadastro Hospitalar (Django)
+# Sistema de Cadastro Hospitalar
 
-Sistema web desenvolvido com **Django** para gerenciar cadastros de **pacientes, médicos/funcionários e consultas**.  
-O projeto implementa operações **CRUD (Create, Read, Update, Delete)** permitindo criar, visualizar, editar e excluir registros.
+Sistema web desenvolvido com Django para gerenciar cadastros de pacientes, médicos/funcionários e consultas.  
+O projeto implementa operações CRUD (Create, Read, Update, Delete) permitindo criar, visualizar, editar e excluir registros.
 
 Este projeto foi criado com o objetivo de **praticar desenvolvimento web com Django** e conceitos de modelagem de dados.
 
 ---
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
-- Cadastro de **Pacientes**
-- Cadastro de **Médicos / Funcionários**
-- Registro de **Consultas**
+- Cadastro de Pacientes
+- Cadastro de Médicos / Funcionários
+- Registro de Consultas
 - Listagem de registros
 - Edição de informações
 - Exclusão de dados
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - **Python**
 - **Django**
@@ -27,7 +27,7 @@ Este projeto foi criado com o objetivo de **praticar desenvolvimento web com Dja
 
 ---
 
-## 📂 Estrutura do sistema
+## Estrutura do sistema
 
 O sistema possui três entidades principais:
 
@@ -41,32 +41,32 @@ O sistema possui três entidades principais:
 - Registro profissional (CRM)
 
 **Consulta**
-- Relaciona **paciente** e **médico**
+- Relaciona paciente e médico
 - Data da consulta
 - Relatório do atendimento
 
 ---
 
-## 📚 Fonte de estudo
+## Fonte de estudo
 
-A implementação das **consultas e da estrutura geral do projeto** foi inspirada nos exemplos e conceitos apresentados no livro:
+A implementação das consultas e da estrutura geral do projeto foi inspirada nos exemplos e conceitos apresentados no livro:
 
 **"Curso Intensivo de Python" (Eric Matthes)**
 
 ---
 
-## 🚀 Como executar o projeto
+## Como executar o projeto
 
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Luan-tm-01/Projeto_CRUD.git
 ```
 
 Entre na pasta:
 
 ```bash
-cd seu-repositorio
+cd Projeto_CRUD
 ```
 
 Crie o ambiente virtual:
