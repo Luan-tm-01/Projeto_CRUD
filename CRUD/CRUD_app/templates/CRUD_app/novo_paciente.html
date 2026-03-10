@@ -1,0 +1,12 @@
+{% extends "CRUD_app/cabecalho.html" %}
+
+{% block content %}
+   <p>Adicione um novo Tópico: </p>
+
+   <form action="{% url 'novo_paciente' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Adicionar</button>
+   </form>
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "CRUD_app/cabecalho.html" %}
+
+{% block content %}
+    <h3>Pacientes:</h3>
+    <ul>
+        {% for paciente in pacientes %}
+            <li>
+                <a href="{% url 'paciente' paciente.id %}">{{ paciente }}</a>
+            </li>
+        {% empty %}
+            <li>Não Há Nenhum Paciente Adicionado.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'novo_paciente' %}">Adicionar Novo Paciente</a>
+    <br>
+    <a href="">Editar Paciente</a>
+    <br>
+    <a href="">Remover Paciente</a>
+
+{% endblock content %}
