@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class DadosPaciente(models.Model):
     nome_completo = models.CharField(max_length=150)
     data_nascimento = models.DateField()
@@ -10,12 +11,11 @@ class DadosPaciente(models.Model):
             ('F', 'Feminino'),
             ('O', 'Outro')
         ]
-)
+    )
     cpf = models.CharField(verbose_name='CPF', max_length=11)
     telefone = models.CharField(max_length=11)
     email = models.EmailField()
-    endereco = models.CharField(max_length= 200)
-    tipo_sangue = models.CharField(max_length=3,choices=[('A+', 'A+'),('A-', 'A-'),('B+', 'B+'),('A-', 'A-'),('AB+', 'AB+'),('AB-', 'AB-'),('O+', 'O+'),('O-', 'O-'),('NS', 'Não sei')])
+    endereco = models.CharField(max_length=200)
     contato_emergencia = models.CharField(max_length=11)
     observacoes = models.TextField()
     data_cadastro = models.DateTimeField(auto_now_add=True)
@@ -26,42 +26,34 @@ class DadosPaciente(models.Model):
     def __str__(self):
         return f'{self.nome_completo}'
 
+
 class DadosMedico(models.Model):
     nome_completo = models.CharField(max_length=150)
     cpf = models.CharField(verbose_name='CPF', max_length=11)
     telefone = models.CharField(max_length=11)
     email = models.EmailField()
-    cargo = models.CharField(
-    max_length=1,
-    choices=[
-        ('M', 'Médico'),
-        ('E', 'Enfermeiro'),
-        ('T', 'Técnico de Enfermagem'),
-        ('R', 'Recepcionista'),
-        ('A', 'Administrador'),
-    ]
-)
+
     especialidade = models.CharField(
-    max_length=2,
-    choices=[
-        ('CG', 'Clínico Geral'),
-        ('CD', 'Cardiologia'),
-        ('PD', 'Pediatria'),
-        ('OR', 'Ortopedia'),
-        ('NE', 'Neurologia'),
-        ('GO', 'Ginecologia'),
-        ('DE', 'Dermatologia'),
-    ]
-)
+        max_length=2,
+        choices=[
+            ('CG', 'Clínico Geral'),
+            ('CD', 'Cardiologia'),
+            ('PD', 'Pediatria'),
+            ('OR', 'Ortopedia'),
+            ('NE', 'Neurologia'),
+            ('GO', 'Ginecologia'),
+            ('DE', 'Dermatologia'),
+        ]
+    )
     crm = models.CharField(max_length=10)
     data_contratacao = models.DateField()
     turno = models.CharField(
-    max_length=1,
-    choices=[
-        ('M', 'Manhã'),
-        ('T', 'Tarde'),
-        ('N', 'Noite'),
-    ]
+        max_length=1,
+        choices=[
+            ('M', 'Manhã'),
+            ('T', 'Tarde'),
+            ('N', 'Noite'),
+        ]
     )
     data_cadastro = models.DateTimeField(auto_now_add=True)
 
@@ -69,7 +61,8 @@ class DadosMedico(models.Model):
         verbose_name_plural = 'Dados dos Medicos'
 
     def __str__(self):
-        return f'{self.nome_completo} - {self.cargo}'
+        return f'{self.nome_completo} - {self.get_especialidade_display()} ({self.get_turno_display()})'
+
 
 class Consulta(models.Model):
     paciente = models.ForeignKey(DadosPaciente, on_delete=models.CASCADE)
@@ -79,15 +72,14 @@ class Consulta(models.Model):
     motivo_consulta = models.CharField(max_length=300)
     relatorio = models.TextField()
     status_consulta = models.CharField(
-    max_length=1,
-    choices=[
-        ('R', 'Revogada'),
-        ('P', 'Pendente'),
-        ('C', 'Concluída'),
-    ]
+        max_length=1,
+        choices=[
+            ('R', 'Revogada'),
+            ('P', 'Pendente'),
+            ('C', 'Concluída'),
+        ]
     )
-    data_registro =models.DateTimeField(auto_now_add=True)
+    data_registro = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.medico}({self.data_consulta}-{self.hora_consulta})'
-
+        return f'{self.medico.nome_completo} {self.data_consulta} ({self.hora_consulta})'

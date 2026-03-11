@@ -1,6 +1,6 @@
 # Sistema de Cadastro Hospitalar
 
-Sistema web desenvolvido com Django para gerenciar cadastros de pacientes, médicos/funcionários e consultas.  
+Sistema web desenvolvido com Django para gerenciar cadastros de pacientes, médicos e consultas.  
 O projeto implementa operações CRUD (Create, Read, Update, Delete) permitindo criar, visualizar, editar e excluir registros.
 
 Este projeto foi criado com o objetivo de **praticar desenvolvimento web com Django** e conceitos de modelagem de dados.
@@ -10,7 +10,7 @@ Este projeto foi criado com o objetivo de **praticar desenvolvimento web com Dja
 ## Funcionalidades
 
 - Cadastro de Pacientes
-- Cadastro de Médicos / Funcionários
+- Cadastro de Médicos
 - Registro de Consultas
 - Listagem de registros
 - Edição de informações
@@ -35,8 +35,7 @@ O sistema possui três entidades principais:
 - Informações pessoais
 - Dados médicos básicos
 
-**Médico / Funcionário**
-- Cargo
+**Médico**
 - Especialidade
 - Registro profissional (CRM)
 

@@ -6,15 +6,22 @@
 
 <p><strong>Nome:</strong> {{ paciente.nome_completo }}</p>
 <p><strong>Data de nascimento:</strong> {{ paciente.data_nascimento }}</p>
-<p><strong>Sexo:</strong> {{ paciente.sexo }}</p>
+<p><strong>Sexo:</strong> {{ paciente.get_sexo_display }}</p>
 <p><strong>CPF:</strong> {{ paciente.cpf }}</p>
 <p><strong>Telefone:</strong> {{ paciente.telefone }}</p>
 <p><strong>Email:</strong> {{ paciente.email }}</p>
 <p><strong>Endereço:</strong> {{ paciente.endereco }}</p>
-<p><strong>Tipo sanguíneo:</strong> {{ paciente.tipo_sangue }}</p>
 <p><strong>Contato emergência:</strong> {{ paciente.contato_emergencia }}</p>
 <p><strong>Observações:</strong> {{ paciente.observacoes }}</p>
 
+<a href="{% url 'edit_paciente' paciente.id %}">
+<button>Editar</button>
+</a>
+
+<form action="{% url 'delete_paciente' paciente.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit" onclick="return confirm('Tem certeza que deseja remover este paciente?')">Excluir Paciente</button>
+</form>
 <hr>
 
 

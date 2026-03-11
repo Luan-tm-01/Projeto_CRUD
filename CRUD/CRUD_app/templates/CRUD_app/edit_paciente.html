@@ -1,0 +1,15 @@
+{% extends "CRUD_app/cabecalho.html" %}
+
+{% block content %}
+   
+    <p><strong>{{ paciente.nome_completo }}</strong></p>
+    
+    <p>Editar Informações do Paciente:</p>
+
+    <form action="{% url 'edit_paciente' paciente.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit" onclick="return confirm('Tem certeza que deseja editar as informações desse paciente?')">Salvar</button>
+    </form>
+
+{% endblock content %}

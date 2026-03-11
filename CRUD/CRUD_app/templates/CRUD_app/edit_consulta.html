@@ -1,0 +1,15 @@
+{% extends "CRUD_app/cabecalho.html" %}
+
+{% block content %}
+   
+    <p><strong>{{ consulta.medico.nome_completo }}</strong></p>
+    
+    <p>Editar Informações da Consulta:</p>
+
+    <form action="{% url 'edit_consulta' consulta.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit" onclick="return confirm('Tem certeza que deseja editar as informações dessa consulta?')">Salvar</button>
+    </form>
+
+{% endblock content %}
