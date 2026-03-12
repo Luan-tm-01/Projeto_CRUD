@@ -1,17 +1,21 @@
 {% extends "CRUD_app/cabecalho.html" %}
 
 {% block content %}
-    <h3>Consultas:</h3>
-    <ul>
-        {% for consulta in consultas %}
-            <li>
-                <a href="{% url 'consulta' consulta.id %}">{{ consulta }}</a>
-            </li>
-        {% empty %}
-            <li>Não Há Nenhuma Consulta Programada.</li>
-        {% endfor %}
-    </ul>
 
-    <a href="{% url 'nova_consulta' %}"><button>Adicionar Nova consulta</button></a>
+<h3 class="titulo">Consultas:</h3>
+
+<ul class="lista">
+    {% for consulta in consultas %}
+        <li>
+            <a href="{% url 'consulta' consulta.id %}">{{ consulta }}</a>
+        </li>
+    {% empty %}
+        <li>Não Há Nenhuma Consulta Programada.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'nova_consulta' %}">
+    <button class="botao-adicionar">Adicionar Nova Consulta</button>
+</a>
 
 {% endblock content %}

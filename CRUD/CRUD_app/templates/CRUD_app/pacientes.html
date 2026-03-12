@@ -1,17 +1,21 @@
 {% extends "CRUD_app/cabecalho.html" %}
 
 {% block content %}
-    <h3>Pacientes:</h3>
-    <ul>
-        {% for paciente in pacientes %}
-            <li>
-                <a href="{% url 'paciente' paciente.id %}">{{ paciente }}</a>
-            </li>
-        {% empty %}
-            <li>Não Há Nenhum Paciente Adicionado.</li>
-        {% endfor %}
-    </ul>
 
-    <a href="{% url 'novo_paciente' %}"><button>Adicionar Novo Paciente</button></a>
+<h3 class="titulo">Pacientes:</h3>
+
+<ul class="lista">
+    {% for paciente in pacientes %}
+        <li>
+            <a href="{% url 'paciente' paciente.id %}">{{ paciente }}</a>
+        </li>
+    {% empty %}
+        <li>Não Há Nenhum Paciente Adicionado.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'novo_paciente' %}">
+    <button class="botao-adicionar">Adicionar Novo Paciente</button>
+</a>
 
 {% endblock content %}

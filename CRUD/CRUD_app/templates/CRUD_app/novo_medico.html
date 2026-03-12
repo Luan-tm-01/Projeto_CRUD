@@ -1,12 +1,22 @@
 {% extends "CRUD_app/cabecalho.html" %}
 
 {% block content %}
-   <p>Adicione um novo Médico: </p>
 
-   <form action="{% url 'novo_medico' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">Adicionar</button>
-   </form>
+<div class="container">
+
+   <div class="card-form">
+
+      <h2 class="titulo">Adicionar Novo Médico</h2>
+
+      <form action="{% url 'novo_medico' %}" method="post">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button class="btn-salvar" name="submit">Adicionar Médico</button>
+      </form>
+
+   </div>
+
+</div>
 
 {% endblock content %}
+

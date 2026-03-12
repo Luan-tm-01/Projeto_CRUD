@@ -2,25 +2,36 @@
 
 {% block content %}
 
-<h2>Informações da Consulta</h2>
+<div class="container">
 
-<p><strong>Paciente:</strong> {{ consulta.paciente }}</p>
-<p><strong>Médico:</strong> {{ consulta.medico }}</p>
-<p><strong>Data da Consulta:</strong> {{ consulta.data_consulta }}</p>
-<p><strong>Hora da Consulta:</strong> {{ consulta.hora_consulta }}</p>
-<p><strong>Motivo da Consulta:</strong> {{ consulta.motivo_consulta }}</p>
-<p><strong>Relátorio da Consulta:</strong> {{ consulta.relatorio }}</p>
-<p><strong>Status da Consulta:</strong> {{ consulta.get_status_consulta_display }}</p>
-<p><strong>Data do Registro:</strong> {{ consulta.data_registro }}</p>
+    <div class="card-info">
 
-<a href="{% url 'edit_consulta' consulta.id %}">
-<button>Editar Consulta</button>
-</a>
+    <h2 class="titulo">Informações da Consulta</h2>
 
-<form action="{% url 'delete_consulta' consulta.id %}" method="post">
-    {% csrf_token %}
-    <button type="submit" onclick="return confirm('Tem certeza que deseja remover esta consulta?')">Excluir Consulta</button>
-</form>
-<hr>
+        <div class="info">
+        <p><strong>Paciente:</strong> {{ consulta.paciente }}</p>
+        <p><strong>Médico:</strong> {{ consulta.medico }}</p>
+        <p><strong>Data da Consulta:</strong> {{ consulta.data_consulta }}</p>
+        <p><strong>Hora da Consulta:</strong> {{ consulta.hora_consulta }}</p>
+        <p><strong>Motivo da Consulta:</strong> {{ consulta.motivo_consulta }}</p>
+        <p><strong>Relátorio da Consulta:</strong> {{ consulta.relatorio }}</p>
+        <p><strong>Status da Consulta:</strong> {{ consulta.get_status_consulta_display }}</p>
+        <p><strong>Data do Registro:</strong> {{ consulta.data_registro }}</p>
+        </div>
+
+        <div class="acoes">
+        <a href="{% url 'edit_consulta' consulta.id %}">
+        <button class="btn-editar">Editar Consulta</button>
+        </a>
+
+        <form action="{% url 'delete_consulta' consulta.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn-excluir" type="submit" onclick="return confirm('Tem certeza que deseja remover esta consulta?')">Excluir Consulta</button>
+        </form>
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock content %}

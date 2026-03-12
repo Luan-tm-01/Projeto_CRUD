@@ -2,27 +2,41 @@
 
 {% block content %}
 
-<h2>Informações do Paciente</h2>
+<div class="container">
 
-<p><strong>Nome:</strong> {{ paciente.nome_completo }}</p>
-<p><strong>Data de nascimento:</strong> {{ paciente.data_nascimento }}</p>
-<p><strong>Sexo:</strong> {{ paciente.get_sexo_display }}</p>
-<p><strong>CPF:</strong> {{ paciente.cpf }}</p>
-<p><strong>Telefone:</strong> {{ paciente.telefone }}</p>
-<p><strong>Email:</strong> {{ paciente.email }}</p>
-<p><strong>Endereço:</strong> {{ paciente.endereco }}</p>
-<p><strong>Contato emergência:</strong> {{ paciente.contato_emergencia }}</p>
-<p><strong>Observações:</strong> {{ paciente.observacoes }}</p>
+    <div class="card-info">
 
-<a href="{% url 'edit_paciente' paciente.id %}">
-<button>Editar</button>
-</a>
+        <h2 class="titulo">Informações do Paciente</h2>
 
-<form action="{% url 'delete_paciente' paciente.id %}" method="post">
-    {% csrf_token %}
-    <button type="submit" onclick="return confirm('Tem certeza que deseja remover este paciente?')">Excluir Paciente</button>
-</form>
-<hr>
+        <div class="info">
+            <p><strong>Nome:</strong> {{ paciente.nome_completo }}</p>
+            <p><strong>Data de nascimento:</strong> {{ paciente.data_nascimento }}</p>
+            <p><strong>Sexo:</strong> {{ paciente.get_sexo_display }}</p>
+            <p><strong>CPF:</strong> {{ paciente.cpf }}</p>
+            <p><strong>Telefone:</strong> {{ paciente.telefone }}</p>
+            <p><strong>Email:</strong> {{ paciente.email }}</p>
+            <p><strong>Endereço:</strong> {{ paciente.endereco }}</p>
+            <p><strong>Contato emergência:</strong> {{ paciente.contato_emergencia }}</p>
+            <p><strong>Observações:</strong> {{ paciente.observacoes }}</p>
+        </div>
 
+        <div class="acoes">
+
+            <a href="{% url 'edit_paciente' paciente.id %}">
+            <button class="btn-editar">Editar</button>
+            </a>
+
+            <form action="{% url 'delete_paciente' paciente.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn-excluir" type="submit" onclick="return confirm('Tem certeza que deseja remover este paciente?')">
+            Excluir Paciente
+            </button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock content %}

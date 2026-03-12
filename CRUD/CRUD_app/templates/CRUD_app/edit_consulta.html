@@ -2,14 +2,23 @@
 
 {% block content %}
    
-    <p><strong>{{ consulta.medico.nome_completo }}</strong></p>
-    
-    <p>Editar Informações da Consulta:</p>
+<div class="container">
 
-    <form action="{% url 'edit_consulta' consulta.id %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit" onclick="return confirm('Tem certeza que deseja editar as informações dessa consulta?')">Salvar</button>
-    </form>
+    <div class="card-form">
+
+        <h2 class="titulo">{{ consulta.medico.nome_completo }}</h2>
+            
+        <p>Editar Informações da Consulta:</p>
+
+        <form action="{% url 'edit_consulta' consulta.id %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button class="btn-salvar" name="submit" onclick="return confirm('Tem certeza que deseja editar as informações dessa consulta?')">Salvar</button>
+        </form>
+        
+    </div>
+
+</div>
 
 {% endblock content %}
+

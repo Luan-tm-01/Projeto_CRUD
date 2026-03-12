@@ -1,0 +1,173 @@
+.navbar{
+    background:#f0eff5;
+    padding:15px 40px;
+    display:flex;
+    gap:30px;
+    border-bottom:2px solid #d7d8e0;
+}
+
+/* Links */
+.navbar a{
+    text-decoration:none;
+    color:#8d6e63; 
+    font-weight:bold;
+    font-size:16px;
+    transition:0.3s; 
+}
+
+.navbar a:hover{
+    color:#2f9e44;
+}
+
+body{
+    background-color:#f5f3ef;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+/* Card de boas vindas */
+.bem-vindo{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+/* Título do sistema */
+.bem-vindo h1{
+    color:#2f9e44;
+    margin-bottom:15px;
+}
+
+/* Texto de boas vindas */
+.bem-vindo p{
+    color:#555;
+    font-size:18px;
+}
+
+/* Título de cada página */
+.titulo{
+    color:#2f9e44;
+    margin-bottom:20px;
+}
+
+/* Lista */
+.lista{
+    list-style:none;
+    padding:0;
+}
+
+/* Item da lista */
+.lista li{
+    background:white;
+    padding:12px 18px;
+    margin-bottom:10px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Link de cada um nas listas */
+.lista a{
+    text-decoration:none;
+    color:#333333;
+    font-weight:bold;
+}
+
+.lista a:hover{
+    color:#2f9e44;
+}
+
+.botao-adicionar{
+    margin-top:20px;
+    padding:10px 18px;
+    background:#2f9e44;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.botao-adicionar:hover{
+    background:#1b5e20;
+}
+
+/* Card das informções */
+.card-info{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    max-width:600px;
+}
+
+/* Botões de ações */
+.acoes{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.btn-editar{
+    background:#8d6e63;
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-editar:hover{
+    background:#6d4c41;
+}
+
+.btn-excluir{
+    background:#c62828;
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-excluir:hover{
+    background:#8e0000;
+}
+
+.card-form{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    max-width:600px;
+}
+
+.card-form input:focus,
+.card-form select:focus,
+.card-form textarea:focus{
+    outline:none;
+    border:1px solid #2f9e44;
+}
+
+.btn-salvar{
+    background:#2f9e44;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-salvar:hover{
+    background:#1b5e20;
+}
